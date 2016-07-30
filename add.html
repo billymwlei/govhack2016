@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<title>Innovative X</title>
+<meta charset="utf-8"/>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="normalize.css">
+<body class="h-100">
+  <header class="flex justify-between py4 ml4 fade-in-up">
+    <a class="flex" href="/">
+      <img class="ml2" src="images/logo.svg">
+    </div>
+    <div class="flex mr4">
+      <a class="flex items-center mr4" href="https://twitter.com/home?status=Based%20in%20QLD?%20Working%20on%20an%20awesome%20project?%20Showcase%20it!%20%23PutItonTheMap%20%23govhack%20%40govhackBNE%20%0A">
+        <span class="underline mr1">Share it on Twitter!</span> Showcase your project to the world! #onTheMap
+      </a>
+    </div>
+  </header>
+  <main class="max-w-620px mx-auto my5 fade-in-up flex flex-column">
+    <h1 class="font-double my0">Add your project to InnovationX</h1>
+    <p class="font-large my0 grey">InnovationX allows the public to discover the different types of innovation that is happening around them — connecting innovations with people.</p>
+    <form action="" class="flex flex-column mt4" method="POST">
+      <div class="flex flex-column w-100 mb3">
+        <input class="border border-grey-light rounded py2 px2 order2" id="project-name" name="Project Name" required="true" type="text" placeholder="Project name... Company name..."></input>
+        <label class="uppercase grey semi font-smaller mb1 required" for="project-name">Project Name</label>
+      </div>
+      <div class="flex flex-column w-100 mb3">
+        <input class="border border-grey-light rounded py2 px2 order2" id="project-link" name="Project URL" required="true" type="url" placeholder="Where can we learn more about it?"></input>
+        <label class="uppercase grey semi font-smaller mb1" for="project-link">Project URL</label>
+      </div>
+      <div class="flex flex-column w-100 mb3">
+        <select name="project-nature" id="project-nature" required="true" class="border border-grey-light rounded py2 px2 order2 ">
+          <option selected>Hackathon? Startup? Small Business?</option>
+          <option value="hackathon">Hackathon</option>
+          <option value="startup" >Startup</option>
+          <option value="small-business">Small Business</option>
+          <option value="Enterprise">Enterprise</option>
+          <option value="research-paper">Research Paper</option>
+        </select>
+        <label class="uppercase grey semi font-smaller mb1 required" for="project-nature">Project Nature</label>
+      </div>
+      <div class="flex flex-column w-100 mb3">
+        <div class="order2 flex flex-column w-100">
+          <label><input type="checkbox" name="category" value="Health" />Health</label>
+          <label><input type="checkbox" name="category" value="Entrepreneurialism" />Entrepreneurialism</label>
+          <label><input type="checkbox" name="category" value="Agriculture" />Agriculture</label>
+          <label><input type="checkbox" name="category" value="Engergy" />Engergy</label>
+          <label><input type="checkbox" name="category" value="Professional, scientific and technical services" />Professional, scientific and technical services</label>
+          <label><input type="checkbox" name="category" value="Environment" />Environment</label>
+          <label><input type="checkbox" name="category" value="Information media and telecommunications" />Information media and telecommunications</label>
+          <label><input type="checkbox" name="category" value="Education" />Education</label>
+          <label><input type="checkbox" name="category" value="Manufacturing" />Manufacturing</label>
+          <label><input type="checkbox" name="category" value="Mining and resources" />Mining and resources</label>
+        </div>
+        <label class="uppercase grey semi required font-smaller mb1" for="project-category">Project Category</label>
+      </div>
+      <div class="flex flex-column w-100 mb3">
+         <input type="date" name="project-started" class="border border-grey-light rounded py2 px2 order2" required="true">
+         <label class="uppercase grey semi required font-smaller mb1" for="project-started">Project Start Date</label>
+      </div>
+      <div class="flex flex-column w-100 mb3">
+        <textarea class="border border-grey-light rounded py2 px2 min-h-150px order2" id="project-description" name="Project Description" required="true" type="text" placeholder="What problem are you solving?"></textarea>
+        <label class="uppercase grey semi required font-smaller mb1" for="project-description">Project Description</label>
+      </div>
+      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send">Submit Project</button>
+    </form>
+
+
+  </main>
+</body>
+<script src="https://use.typekit.net/mba3tyv.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
