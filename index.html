@@ -21,47 +21,49 @@
     </header>
     <nav class="flex flex-column absolute r0 b0 mr4 mb4 right-align">
       <h2 class="uppercase font-small grey mt0 medium">Top 10 Innovative Space</h2>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(0)">
         <h4 class="font-small mr1 my0 regular">Health Care</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(1)">
         <h4 class="font-small mr1 my0 regular">Education</h4>
         <p class="font-larger my0 industry line-height-smaller regular">12</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(2)">
         <h4 class="font-small mr1 my0 regular">Environment</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
-        <h4 class="font-small mr1 my0 regular">Agriculture</h4>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(3)">
+        <h4 class="font-small mr1 my0 regular">Agriculture</h4> 
         <p class="font-larger my0 industry line-height-smaller regular">12</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(4)">
         <h4 class="font-small mr1 my0 regular">Design</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(5)">
         <h4 class="font-small mr1 my0 regular">Energy</h4>
         <p class="font-larger my0 industry line-height-smaller regular">12</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(6)">
         <h4 class="font-small mr1 my0 regular">FinTech</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(7)">
         <h4 class="font-small mr1 my0 regular">Consumer</h4>
         <p class="font-larger my0 industry line-height-smaller regular">12</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2"  onclick="onClickFilter(8)">
         <h4 class="font-small mr1 my0 regular">Small Businesses</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
       </a>
-      <a class="flex justify-end items-baseline right-align border rounded p1 mb0" href=""#>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb0"  onclick="onClickFilter(9)">
         <h4 class="font-small mr1 my0 regular">Research Papers</h4>
         <p class="font-larger my0 industry line-height-smaller regular">12</p>
       </a>
     </nav>
+
     <div class="absolute b0 l0 ml4 mb4">
       <a class="m0 mr4 grey-darker" href=""#>Cluster View</a>
       <a class="m0" href=""#>Map View</a>
@@ -78,6 +80,10 @@
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <script>
+
+
+var isCategoryOn = [];
+
 var data = [
   {
     "Company": "Bioproton Pty Ltd",
@@ -732,18 +738,33 @@ var data = [
   }
 ];
 
-
 var sortedData =
 _
 .chain(data)
 .groupBy('Sector')
 .map(function(value, key) {
+    isCategoryOn.push(true);
     return {
         type: key,
         companies: value
     }
 })
 .value();
+
+
+var onClickFilter = function (idx){
+  if(isCategoryOn[idx]) {
+    // Take out the circle
+
+  } else {
+    // Put the circle back
+
+  }
+
+  isCategoryOn[idx] = !isCategoryOn[idx];
+  console.log(isCategoryOn);
+
+};
 
 
 var width = 960,
@@ -792,7 +813,7 @@ var force = d3.layout.force()
     .nodes(nodes)
     .size([width, height])
     .gravity(.02)
-    .charge(0)
+    .charge(1)
     .on("tick", tick)
     .start();
 
