@@ -89,7 +89,10 @@
 <script src="https://use.typekit.net/mba3tyv.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+<script type="text/javascript">
 
+
+</script>
 <script>
 var isCategoryOn = [];
 var data = [
@@ -744,19 +747,30 @@ var data = [
     "Sector": "Professional, scientific and technical services",
     "TypeID": 0
   }
-];var sortedData =
+];
+
+
+var sortedData =
     _
     .chain(data)
     .groupBy('Sector')
     .map(function(value, key) {
         isCategoryOn.push(true);
-        console.log(key);
+        //console.log(key);
         return {
             type: key,
             companies: value
         }
     })
     .value();
+
+$(document).ready(function(){
+  $('nav a p').each(function(index) {
+    $(this).html(sortedData[index].companies.length);
+  });
+});
+
+
 var onClickFilter = function(idx) {
 
     if (isCategoryOn[idx]) {

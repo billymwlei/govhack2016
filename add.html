@@ -35,7 +35,7 @@
   <main class="max-w-620px mx-auto my5 fade-in-up flex flex-column">
     <h1 class="font-double my0">Add your project to InnovationX</h1>
     <p class="font-large my0 grey">InnovationX allows the public to discover the different types of innovation that is happening around them — connecting innovations with people.</p>
-    <form action="" class="flex flex-column mt4" method="POST">
+    <form action="" class="flex flex-column mt4" method="POST" id="new">
       <div class="flex flex-column w-100 mb3">
         <input class="border border-grey-light rounded py2 px2 order2" id="project-name" name="Project Name" required="true" type="text" placeholder="Project name... Company name..."></input>
         <label class="uppercase grey semi font-smaller mb1 required" for="project-name">Project Name</label>
@@ -78,7 +78,7 @@
         <textarea class="border border-grey-light rounded py2 px2 min-h-150px order2" id="project-description" name="Project Description" required="true" type="text" placeholder="What problem are you solving?"></textarea>
         <label class="uppercase grey semi required font-smaller mb1" for="project-description">Project Description</label>
       </div>
-      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send">Submit Project</button>
+      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send" onclick="submit()">Submit Project</button>
     </form>
 
 
@@ -86,3 +86,9 @@
 </body>
 <script src="https://use.typekit.net/mba3tyv.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script type="text/javascript">
+     $('form').on('submit', function(e) {
+        event.preventDefault();
+        console.log(this.serializeArray());
+    });
+</script>
