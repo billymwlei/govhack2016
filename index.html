@@ -1,16 +1,83 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+    <title>Innovative X</title>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
-<body>
+<body class="h-100">
+<header class="flex justify-between py4 ml4">
+      <div class="flex">
+        <img class="mr2" src="http://placehold.it/50x50">
+      </div>
+      <div class="flex mr4">
+        <a class="flex items-center mr2" href="https://twitter.com/intent/tweet?text=Share+it+on+Twitter!+Showcase+your+project+to+the+world!+#onTheMap+via+%40im_felix">
+          Share it on Twitter! Showcase your project to the world! #onTheMap
+        </a>
+        <a class="flex items-center rounded bg-grey-light py2 px4" href=""#>
+          Add your innovation
+        </a>
+      </div>
+    </header>
+    <nav class="flex flex-column absolute r0 b0 mr4 mb4 right-align">
+      <h2 class="uppercase font-small grey mt0 medium">Top 10 Innovative Space</h2>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Health Care</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">60</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Education</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">12</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Environment</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">60</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Agriculture</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">12</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Design</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">60</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Energy</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">12</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">FinTech</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">60</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Consumer</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">12</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb2" href=""#>
+        <h4 class="font-small mr1 my0 regular">Small Businesses</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">60</p>
+      </a>
+      <a class="flex justify-end items-baseline right-align border rounded p1 mb0" href=""#>
+        <h4 class="font-small mr1 my0 regular">Research Papers</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">12</p>
+      </a>
+    </nav>
+    <div class="absolute b0 l0 ml4 mb4">
+      <a class="m0 mr4 grey-darker" href=""#>Cluster View</a>
+      <a class="m0" href=""#>Map View</a>
+    </div>
+
+
+
 </body>
 
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+<script src="https://use.typekit.net/mba3tyv.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <script>
-
-
 var data = [
   {
     "Company": "Bioproton Pty Ltd",
@@ -95,20 +162,6 @@ var data = [
     "Location": "Bundaberg",
     "Sector": "Agriculture",
     "TypeID": 1
-  },
-  {
-    "Company": "Music Broadcasting Society of Queensland",
-    "Summary": "Expand the Silver Memories radio service in Queensland aged care facilities, for the benefit of people living with dementia.",
-    "Location": "Coorparoo",
-    "Sector": "Arts",
-    "TypeID": 2
-  },
-  {
-    "Company": "Strauss, Dr Darrell",
-    "Summary": "Development of cost effective, large-scale nearshore nourishment for Queensland beaches",
-    "Location": "Gold Coast",
-    "Sector": "Arts",
-    "TypeID": 2
   },
   {
     "Company": "Meston, Mr Troy",
@@ -680,7 +733,7 @@ var data = [
 ];
 
 
-var sortedData = 
+var sortedData =
 _
 .chain(data)
 .groupBy('Sector')
@@ -703,8 +756,16 @@ var width = 960,
 var n = data.length, // total number of circles
     m = sortedData.length; // number of distinct clusters
 
-var color = d3.scale.category20()
-    .domain(d3.range(m));
+var color = ['#1f77b4',
+             '#ff7f0e',
+             '#2ca02c',
+             '#d62728',
+             '#9467bd',
+             '#8c564b',
+             '#e377c2',
+             '#7f7f7f',
+             '#bcbd22',
+             '#17becf']
 
 // The largest node for each cluster.
 var clusters = new Array(m);
@@ -725,7 +786,7 @@ var nodes = d3.range(data.length).map(function(idx) {
   //console.log(d);
 
   return d;
-}); 
+});
 
 var force = d3.layout.force()
     .nodes(nodes)
@@ -743,7 +804,7 @@ var circle = svg.selectAll("circle")
     .data(nodes)
     .enter().append("circle")
     .attr("r", function(d) { return d.radius; })
-    .style("fill", function(d) { return color(d.cluster); })
+    .style("fill", function(d) { return color[d.cluster]; })
     .call(force.drag);
 
 function tick(e) {
@@ -800,5 +861,4 @@ function collide(alpha) {
     });
   };
 }
-
 </script>
