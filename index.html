@@ -753,17 +753,20 @@ _
 
 
 var onClickFilter = function (idx){
+      console.log(circle);
+
   if(isCategoryOn[idx]) {
     // Take out the circle
-    console.log(sortedData[idx].type + "is Off now") ;
+    //svg.selectAll("circle").remove;
+    svg.selectAll("circle").filter(function(d){ return d.cluster === idx }).style("visibility","hidden");
+
   } else {
     // Put the circle back
+    svg.selectAll("circle").filter(function(d){ return d.cluster === idx }).style("visibility","visible");
 
   }
 
   isCategoryOn[idx] = !isCategoryOn[idx];
-  console.log(isCategoryOn);
-
 };
 
 
@@ -804,7 +807,7 @@ var nodes = d3.range(data.length).map(function(idx) {
   if (!clusters[i] || (r > clusters[i].radius)) {
     clusters[i] = d;
   }
-
+  console.log(d);
   return d;
 });
 
@@ -812,7 +815,7 @@ var force = d3.layout.force()
     .nodes(nodes)
     .size([width, height])
     .gravity(.02)
-    .charge(1)
+    .charge(0)
     .on("tick", tick)
     .start();
 
@@ -824,8 +827,14 @@ var circle = svg.selectAll("circle")
     .data(nodes)
     .enter().append("circle")
     .attr("r", function(d) { return d.radius; })
+    .attr("cluster",function(d){return d.cluster})
     .style("fill", function(d) { return color[d.cluster]; })
+    .on("click",elementOnClick)
     .call(force.drag);
+
+function elementOnClick(element) {
+  console.log(element);
+}
 
 function tick(e) {
   circle
