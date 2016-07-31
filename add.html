@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="styles/main.css">
 <body id="addPage" class="h-100">
   <header class="flex justify-between py4 ml4 fade-in-up">
-    <a class="flex" href="/">
+    <a class="flex" href="https://billymwlei.github.io/govhack2016/">
       <img class="ml2" src="images/innovationx-logo.svg">
     </div>
     <div class="flex mr4">
@@ -94,23 +94,14 @@
 
 $(document).ready(function(){
 
+
     Parse.initialize('myAppId','innovativex');
     Parse.serverURL = 'http://innovativex.azurewebsites.net/parse';
 
      $('form').on('submit', function(e) {
-        console.log($(this).serializeArray());
+        console.log("???");
         event.preventDefault();
-
-        var obj = new Parse.Object('GameScore');
-        obj.set('score',1337);
-        obj.save().then(function(obj) {
-          console.log(obj.toJSON());
-          var query = new Parse.Query('GameScore');
-          query.get(obj.id).then(function(objAgain) {
-            console.log(objAgain.toJSON());
-          }, function(err) {console.log(err); });
-        }, function(err) { console.log(err); });
-
+        window.location.href = 'https://billymwlei.github.io/govhack2016/';
     });
 });
 
