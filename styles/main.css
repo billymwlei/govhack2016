@@ -22,11 +22,11 @@ Grey:			#30343f
     // border: 1px solid red;
 }
 #navSidebar h2 {
-	margin-right: 40px;
+	margin-right: 20px;
 }
 
 #navSidebar .sidebarContainer {
-	overflow-y: scroll;
+	// overflow-y: scroll;
 	padding-right: 20px
 }
 #navSidebar .sidebarContainer .innovation-type {
