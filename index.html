@@ -794,6 +794,22 @@ var sortedData =
     .value();
 
 $(document).ready(function(){
+  $('nav a').each(function(index) {
+
+    $(this).addClass('is-selected');
+
+    $(this).click(function(){
+      if(isCategoryOn[index]) {
+        $(this).removeClass('is-selected');
+        $(this).addClass('de-selected');
+      } else {
+        $(this).removeClass('de-selected');
+        $(this).addClass('is-selected');
+      }
+      onClickFilter(index);
+    })
+  });
+
   $('nav a p').each(function(index) {
     $(this).html(sortedData[index].companies.length);
   });
