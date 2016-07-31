@@ -1,0 +1,28 @@
+/* Colours
+Infrared:		#ff2247
+Grey:			#30343f
+*/
+
+#addBtn,
+#submitBtn {
+	background-color: #ff2247 !important;
+	border: none !important;
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+#navSidebar {
+	height: 80%;
+    width: 280px;
+    overflow-y: scroll;
+    padding: 12px 20px;
+}
+
+#navSidebar .innovation-type {
+	padding: 3px;
+}
+#navSidebar .innovation-type:hover {
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.05);
+}

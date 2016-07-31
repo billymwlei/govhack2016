@@ -21,7 +21,8 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="stylesheet" type="text/css" href="normalize.css">
-<body class="h-100">
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<body id="addPage" class="h-100">
   <header class="flex justify-between py4 ml4 fade-in-up">
     <a class="flex" href="/">
       <img class="ml2" src="images/innovationx-logo.svg">
@@ -78,7 +79,7 @@
         <textarea class="border border-grey-light rounded py2 px2 min-h-150px order2" id="project-description" name="Project Description" required="true" type="text" placeholder="What problem are you solving?"></textarea>
         <label class="uppercase grey semi required font-smaller mb1" for="project-description">Project Description</label>
       </div>
-      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send" onclick="submit()">Submit Project</button>
+      <button id="submitBtn" class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send" onclick="submit()">Submit Project</button>
     </form>
 
 
