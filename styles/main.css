@@ -15,15 +15,22 @@ Grey:			#30343f
 #navSidebar {
 	height: 80%;
     width: 260px;
-    overflow-y: scroll;
-    padding: 12px 20px;
+    // border: 1px solid red;
+}
+#navSidebar h2 {
+	margin-right: 40px;
 }
 
-#navSidebar .innovation-type {
+#navSidebar .sidebarContainer {
+	overflow-y: scroll;
+	padding-right: 20px
+}
+#navSidebar .sidebarContainer .innovation-type {
+	display: block;
     padding: 2px;
-    margin: 6px 0px;
+    margin: 10px 0px;
 }
 #navSidebar .innovation-type:hover {
 	cursor: pointer;
-	background-color: rgba(0,0,0,0.05);
+	background-color: rgba(0,0,0,0.03);
 }

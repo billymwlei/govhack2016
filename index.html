@@ -23,22 +23,22 @@
 <link rel="stylesheet" type="text/css" href="normalize.css">
 <link rel="stylesheet" type="text/css" href="styles/main.css">
 <body id="homePage" class="h-100">
-<header class="flex justify-between py4 ml4">
-      <div class="flex">
-        <img class="mr2" src="images/innovationx-logo.svg">
-      </div>
-      <div class="flex mr4">
-        <a class="flex items-center mr4" href="https://twitter.com/home?status=Based%20in%20QLD?%20Working%20on%20an%20awesome%20project?%20Showcase%20it!%20%23PutItonTheMap%20%23govhack%20%40govhackBNE%20%0A">
-          Share it on Twitter! Showcase your project to the world! #onTheMap
-        </a>
-        <a id="addBtn" class="flex items-center action rounded white bg-grey-dark py2 px4" href="add.html">
-          Add your innovation
-        </a>
-      </div>
-    </header>
-    <nav id="navSidebar" class="flex flex-column absolute r0 b0 mr4 mb4 right-align">
-      <h2 class="uppercase font-small grey mt0 medium">Innovation Types</h2>
-
+  <header class="flex justify-between py4 ml4">
+    <div class="flex">
+      <img class="mr2" src="images/innovationx-logo.svg">
+    </div>
+    <div class="flex mr4">
+      <a class="flex items-center mr4" href="https://twitter.com/home?status=Based%20in%20QLD?%20Working%20on%20an%20awesome%20project?%20Showcase%20it!%20%23PutItonTheMap%20%23govhack%20%40govhackBNE%20%0A">
+        Share it on Twitter! Showcase your project to the world! #onTheMap
+      </a>
+      <a id="addBtn" class="flex items-center action rounded white bg-grey-dark py2 px4" href="add.html">
+        Add your innovation
+      </a>
+    </div>
+  </header>
+  <nav id="navSidebar" class="flex flex-column absolute r0 b0 mr4 mb4 right-align">
+  <h2 class="uppercase font-large grey mt0 medium">Innovation Types</h2>
+    <div class="sidebarContainer">
       <a class="innovation-type right-align border rounded"  style="color: #ff7f0e;" onclick="onClickFilter(1)">
         <h4 class="font-small mr1 my0 regular">Agriculture</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
@@ -79,7 +79,7 @@
         <h4 class="font-small mr1 my0 regular">Professional Services</h4>
         <p class="font-larger my0 industry line-height-smaller regular">12</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #ff7f0e;" onclick="onClickFilter(1)">
+<!--       <a class="innovation-type right-align border rounded"  style="color: #ff7f0e;" onclick="onClickFilter(1)">
         <h4 class="font-small mr1 my0 regular">Agriculture</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
       </a>
@@ -106,12 +106,13 @@
       <a class="innovation-type right-align border rounded"  style="color: #7f7f7f;" onclick="onClickFilter(7)">
         <h4 class="font-small mr1 my0 regular">Information Media</h4>
         <p class="font-larger my0 industry line-height-smaller regular">60</p>
-      </a>
-    </nav>
-    <div class="absolute b0 l0 ml4 mb4">
-      <!-- <a class="m0 mr4 grey-darker" href=""#>Cluster View</a> -->
-      <!-- <a class="m0" href=""#>Map View</a> -->
+      </a> -->
     </div>
+  </nav>
+  <div class="absolute b0 l0 ml4 mb4">
+    <!-- <a class="m0 mr4 grey-darker" href=""#>Cluster View</a> -->
+    <!-- <a class="m0" href=""#>Map View</a> -->
+  </div>
 </body>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
@@ -123,8 +124,8 @@
 
 </script>
 <script>
-var isCategoryOn = [];
-var data = [
+  var isCategoryOn = [];
+  var data = [
   {
     "Company": "Bioproton Pty Ltd",
     "Summary": "Develop a new process to remove dags from feedlot cattle.",
@@ -776,55 +777,55 @@ var data = [
     "Sector": "Professional, scientific and technical services",
     "TypeID": 0
   }
-];
+  ];
 
 
-var sortedData =
-    _
-    .chain(data)
-    .groupBy('Sector')
-    .map(function(value, key) {
-        isCategoryOn.push(true);
+  var sortedData =
+  _
+  .chain(data)
+  .groupBy('Sector')
+  .map(function(value, key) {
+    isCategoryOn.push(true);
         //console.log(key);
         return {
-            type: key,
-            companies: value
+          type: key,
+          companies: value
         }
-    })
-    .value();
+      })
+  .value();
 
-$(document).ready(function(){
-  $('nav a p').each(function(index) {
-    $(this).html(sortedData[index].companies.length);
+  $(document).ready(function(){
+    $('nav a p').each(function(index) {
+      $(this).html(sortedData[index].companies.length);
+    });
   });
-});
 
 
-var onClickFilter = function(idx) {
+  var onClickFilter = function(idx) {
 
     if (isCategoryOn[idx]) {
         // Take out the circle
         //svg.selectAll("circle").remove;
 
         svg.selectAll("circle").filter(function(d) {
-            return d.cluster === idx
+          return d.cluster === idx
         }).style("visibility", "hidden");
         //svg.selectAll("circle").filter(function(d){ return d.cluster !== idx }).style("visibility","hidden");
 
-    } else {
+      } else {
         // Put the circle back
         svg.selectAll("circle").filter(function(d) {
-            return d.cluster === idx
+          return d.cluster === idx
         }).style("visibility", "visible");
         //svg.selectAll("circle").filter(function(d){ return d.cluster !== idx }).style("visibility","visible");
 
-    }
+      }
 
-    isCategoryOn[idx] = !isCategoryOn[idx];
-};
+      isCategoryOn[idx] = !isCategoryOn[idx];
+    };
 
 
-var width = 900,
+    var width = 900,
     height = 650,
     padding = 3, // separation between same-color circles
     clusterPadding = 30, // separation between different-color circles
@@ -833,130 +834,130 @@ var width = 900,
 var n = data.length, // total number of circles
     m = 10; // number of distinct clusters
 
-var color = ['#1f77b4',
-             '#ff7f0e',
-             '#2ca02c',
-             '#d62728',
-             '#9467bd',
-             '#8c564b',
-             '#e377c2',
-             '#7f7f7f',
-             '#bcbd22',
-             '#17becf']
-var clusters = new Array(m);
-var i = 0;
-var nodes = d3.range(data.length).map(function(idx) {
-    var i = data[idx].TypeID;
-    var r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
-        d = {
-            cluster: data[idx].TypeID,
-            radius: 10,
-            data: data[idx]
-        };
-    if (!clusters[i] || (r > clusters[i].radius)) {
+    var color = ['#1f77b4',
+    '#ff7f0e',
+    '#2ca02c',
+    '#d62728',
+    '#9467bd',
+    '#8c564b',
+    '#e377c2',
+    '#7f7f7f',
+    '#bcbd22',
+    '#17becf']
+    var clusters = new Array(m);
+    var i = 0;
+    var nodes = d3.range(data.length).map(function(idx) {
+      var i = data[idx].TypeID;
+      var r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
+      d = {
+        cluster: data[idx].TypeID,
+        radius: 10,
+        data: data[idx]
+      };
+      if (!clusters[i] || (r > clusters[i].radius)) {
         clusters[i] = d;
-    }
-    return d;
-});
-var force = d3.layout.force()
+      }
+      return d;
+    });
+    var force = d3.layout.force()
     .nodes(nodes)
     .size([width, height])
     .gravity(.02)
     .charge(0)
     .on("tick", tick)
     .start();
-var svg = d3.select("body").append("svg")
+    var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
-var div = d3.select("body").append("div")
+    var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
-var circle = svg.selectAll("circle")
+    var circle = svg.selectAll("circle")
     .data(nodes)
     .enter().append("circle")
     .attr("r", function(d) {
-        return d.radius;
+      return d.radius;
     })
     .attr("cluster", function(d) {
-        return d.cluster
+      return d.cluster
     })
     .style("fill", function(d) {
-        return color[d.cluster];
+      return color[d.cluster];
     })
     .on("click", elementOnClick)
     .on("mouseover", function(d) {
-        div.transition()
-            .duration(200)
-            .style("opacity", 0.9);
-        div.html(d.data.Company + "<br/>" + d.data.Summary)
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
+      div.transition()
+      .duration(200)
+      .style("opacity", 0.9);
+      div.html(d.data.Company + "<br/>" + d.data.Summary)
+      .style("left", (d3.event.pageX) + "px")
+      .style("top", (d3.event.pageY - 28) + "px");
     })
     .on("mouseout", function(d) {
-        div.transition()
-            .duration(500)
-            .style("opacity", 0);
+      div.transition()
+      .duration(500)
+      .style("opacity", 0);
     })
     .call(force.drag);
 
-function elementOnClick(element) {
-    console.log(element);
-}
+    function elementOnClick(element) {
+      console.log(element);
+    }
 
-function tick(e) {
-    circle
-        .each(cluster(10 * e.alpha * e.alpha))
-        .each(collide(.5))
-        .attr("cx", function(d) {
-            return d.x;
-        })
-        .attr("cy", function(d) {
-            return d.y;
-        });
-}
+    function tick(e) {
+      circle
+      .each(cluster(10 * e.alpha * e.alpha))
+      .each(collide(.5))
+      .attr("cx", function(d) {
+        return d.x;
+      })
+      .attr("cy", function(d) {
+        return d.y;
+      });
+    }
 // Move d to be adjacent to the cluster node.
 function cluster(alpha) {
-    return function(d) {
-        var cluster = clusters[d.cluster];
-        if (cluster === d) return;
-        var x = d.x - cluster.x,
-            y = d.y - cluster.y,
-            l = Math.sqrt(x * x + y * y),
-            r = d.radius + cluster.radius;
-        if (l != r) {
-            l = (l - r) / l * alpha;
-            d.x -= x *= l;
-            d.y -= y *= l;
-            cluster.x += x;
-            cluster.y += y;
-        }
-    };
+  return function(d) {
+    var cluster = clusters[d.cluster];
+    if (cluster === d) return;
+    var x = d.x - cluster.x,
+    y = d.y - cluster.y,
+    l = Math.sqrt(x * x + y * y),
+    r = d.radius + cluster.radius;
+    if (l != r) {
+      l = (l - r) / l * alpha;
+      d.x -= x *= l;
+      d.y -= y *= l;
+      cluster.x += x;
+      cluster.y += y;
+    }
+  };
 }
 // Resolves collisions between d and all other circles.
 function collide(alpha) {
-    var quadtree = d3.geom.quadtree(nodes);
-    return function(d) {
-        var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
-            nx1 = d.x - r,
-            nx2 = d.x + r,
-            ny1 = d.y - r,
-            ny2 = d.y + r;
-        quadtree.visit(function(quad, x1, y1, x2, y2) {
-            if (quad.point && (quad.point !== d)) {
-                var x = d.x - quad.point.x,
-                    y = d.y - quad.point.y,
-                    l = Math.sqrt(x * x + y * y),
-                    r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
-                if (l < r) {
-                    l = (l - r) / l * alpha;
-                    d.x -= x *= l;
-                    d.y -= y *= l;
-                    quad.point.x += x;
-                    quad.point.y += y;
-                }
-            }
-            return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
-        });
-    };
+  var quadtree = d3.geom.quadtree(nodes);
+  return function(d) {
+    var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
+    nx1 = d.x - r,
+    nx2 = d.x + r,
+    ny1 = d.y - r,
+    ny2 = d.y + r;
+    quadtree.visit(function(quad, x1, y1, x2, y2) {
+      if (quad.point && (quad.point !== d)) {
+        var x = d.x - quad.point.x,
+        y = d.y - quad.point.y,
+        l = Math.sqrt(x * x + y * y),
+        r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
+        if (l < r) {
+          l = (l - r) / l * alpha;
+          d.x -= x *= l;
+          d.y -= y *= l;
+          quad.point.x += x;
+          quad.point.y += y;
+        }
+      }
+      return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+    });
+  };
 }
 </script>
