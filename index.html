@@ -873,10 +873,11 @@ var n = data.length, // total number of circles
     })
     .on("click", elementOnClick)
     .on("mouseover", function(d) {
+      var http = "<p class='title'>" + d.data.Company + "</p> <br/>" + "<p class='summary'>" +d.data.Summary +"</p> <br/>"+ "<p class='location'>" +d.data.Location +"</p>";
       div.transition()
       .duration(200)
       .style("opacity", 0.9);
-      div.html(d.data.Company + "<br/>" + d.data.Summary)
+      div.html(http)
       .style("left", (d3.event.pageX) + "px")
       .style("top", (d3.event.pageY - 28) + "px");
     })
