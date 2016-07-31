@@ -79,17 +79,24 @@
         <textarea class="border border-grey-light rounded py2 px2 min-h-150px order2" id="project-description" name="Project Description" required="true" type="text" placeholder="What problem are you solving?"></textarea>
         <label class="uppercase grey semi required font-smaller mb1" for="project-description">Project Description</label>
       </div>
-      <button id="submitBtn" class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send" onclick="submit()">Submit Project</button>
+      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send"  onclick="submit()" >Submit Project</button>
+
     </form>
 
 
   </main>
 </body>
+<script src="https://cdn.jsdelivr.net/parse/1.6.7/parse.min.js"></script>
 <script src="https://use.typekit.net/mba3tyv.js"></script>
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 <script type="text/javascript">
+
+$(document).ready(function(){
      $('form').on('submit', function(e) {
+        console.log($(this).serializeArray());
         event.preventDefault();
-        console.log(this.serializeArray());
     });
+});
+
 </script>
