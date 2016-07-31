@@ -14,13 +14,14 @@ Grey:			#30343f
 
 #navSidebar {
 	height: 80%;
-    width: 280px;
+    width: 260px;
     overflow-y: scroll;
     padding: 12px 20px;
 }
 
 #navSidebar .innovation-type {
-	padding: 3px;
+    padding: 2px;
+    margin: 6px 0px;
 }
 #navSidebar .innovation-type:hover {
 	cursor: pointer;
