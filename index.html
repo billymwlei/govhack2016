@@ -25,7 +25,7 @@
 <body id="homePage" class="h-100">
   <header class="flex justify-between py4 ml4">
     <div class="flex">
-      <img class="mr2" src="images/innovationx-logo.svg">
+      <img id="brand-logo" class="mr2" src="images/innovationx-logo.svg">
     </div>
     <div class="flex mr4">
       <a class="flex items-center mr4" href="https://twitter.com/home?status=Based%20in%20QLD?%20Working%20on%20an%20awesome%20project?%20Showcase%20it!%20%23PutItonTheMap%20%23govhack%20%40govhackBNE%20%0A">
@@ -223,7 +223,7 @@ var n = data.length, // total number of circles
     .on("click", elementOnClick)
     .on("mouseover", function(d) {
       d3.select(this).style("stroke", " rgba(164, 255, 255, 0.6)").style("stroke-width","8").style("stroke-opacity","0.6");
-      var http = "<h3 class='title'>" + d.data.Company + "</h3>" + "<p class='summary'>" +d.data.Summary +"</p>"+ "<p class='location'>" +d.data.Location +"</p>";
+      var http = "<h3 class='title'>" + d.data.Company + "</h3>" + "<p class='location'><img class='location-icon' src='images/location-icon.png' />" +d.data.Location +"</p>" + "<p class='summary'>" +d.data.Summary +"</p>";
       div.transition()
       .duration(200)
       .style("opacity", 0.9);
