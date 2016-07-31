@@ -31,7 +31,7 @@
       <a class="flex items-center mr4" href="https://twitter.com/home?status=Based%20in%20QLD?%20Working%20on%20an%20awesome%20project?%20Showcase%20it!%20%23PutItonTheMap%20%23govhack%20%40govhackBNE%20%0A">
         Share it on Twitter! Showcase your project to the world! #onTheMap
       </a>
-      <a id="addBtn" class="flex items-center action rounded white bg-grey-dark py2 px4" href="add.html">
+      <a id="addBtn" class="flex items-center action rounded white bg-grey-dark py2 px4" href="https://billymwlei.github.io/govhack2016/add.html">
         Add your innovation
       </a>
     </div>
@@ -39,44 +39,44 @@
   <nav id="navSidebar" class="flex flex-column absolute r0 b0 mr4 mb4 right-align">
   <h2 class="uppercase font-large grey mt0 medium">Innovation Sectors</h2>
     <div class="sidebarContainer">
-      <a class="innovation-type right-align border rounded"  style="color: #ff7f0e;">
+          <a class="innovation-type right-align border rounded"  style="color: #1f77b4;" typeID="0">
+        <h4 class="font-small mr1 my0 regular">Professional Services</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #ff7f0e;" typeID="1">
         <h4 class="font-small mr1 my0 regular">Agriculture</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #2ca02c;">
+      <a class="innovation-type right-align border rounded"  style="color: #2ca02c;" typeID="2">
         <h4 class="font-small mr1 my0 regular">Education</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #d62728;">
+      <a class="innovation-type right-align border rounded"  style="color: #d62728;" typeID="3">
         <h4 class="font-small mr1 my0 regular">Energy</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #9467bd;">
+      <a class="innovation-type right-align border rounded"  style="color: #9467bd;" typeID="4">
         <h4 class="font-small mr1 my0 regular">Entrepreneurialism</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #8c564b;">
+      <a class="innovation-type right-align border rounded"  style="color: #8c564b;" typeID="5">
         <h4 class="font-small mr1 my0 regular">Environment</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #e377c2;">
+      <a class="innovation-type right-align border rounded"  style="color: #e377c2;" typeID="6">
         <h4 class="font-small mr1 my0 regular">Health</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #7f7f7f;">
+      <a class="innovation-type right-align border rounded"  style="color: #7f7f7f;" typeID="7">
         <h4 class="font-small mr1 my0 regular">Information Media</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #bcbd22;">
+      <a class="innovation-type right-align border rounded"  style="color: #bcbd22;" typeID="8">
         <h4 class="font-small mr1 my0 regular">Manufacturing</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
-      <a class="innovation-type right-align border rounded"  style="color: #17becf;">
+      <a class="innovation-type right-align border rounded"  style="color: #17becf;" typeID="9">
         <h4 class="font-small mr1 my0 regular">Mining and Resources</h4>
-        <p class="font-larger my0 industry line-height-smaller regular">0</p>
-      </a>
-      <a class="innovation-type right-align border rounded"  style="color: #1f77b4;">
-        <h4 class="font-small mr1 my0 regular">Professional Services</h4>
         <p class="font-larger my0 industry line-height-smaller regular">0</p>
       </a>
     </div>
@@ -101,7 +101,7 @@
   var data = [];
   $.getJSON("data/final.json", function(json) {
       data = json;
-        var sortedData =
+  var sortedData =
   _
   .chain(data)
   .groupBy('Sector')
@@ -114,6 +114,8 @@
         }
       })
   .value();
+sortedData.unshift(sortedData.pop());
+
 
 $(document).ready(function() {
   $('nav a').each(function(index) {
@@ -128,6 +130,7 @@ $(document).ready(function() {
         $(this).removeClass('de-selected');
         $(this).addClass('is-selected');
       }
+      var item_no = $(this).attr("typeID");
       onClickFilter(index);
     })
   });
