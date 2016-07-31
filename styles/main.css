@@ -1,0 +1,73 @@
+/* Colours
+Infrared:		#ff2247
+Grey:			#30343f
+*/
+
+#brand-logo {
+	height: 48px;
+}
+
+#addBtn,
+#submitBtn {
+	background-color: #ff2247 !important;
+	border: none !important;
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+#navSidebar {
+	height: 80%;
+    width: 260px;
+    // border: 1px solid red;
+}
+#navSidebar h2 {
+	margin-right: 20px;
+}
+
+#navSidebar .sidebarContainer {
+	// overflow-y: scroll;
+	padding-right: 20px
+}
+#navSidebar .sidebarContainer .innovation-type {
+	display: block;
+    padding: 2px;
+    margin: 10px 0px;
+}
+#navSidebar .innovation-type:hover {
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.03);
+}
+
+#navSidebar .innovation-type.de-selected {
+	opacity: 0.7;
+	border-color: #c2c2c2;
+}
+#navSidebar .innovation-type.de-selected h4,
+#navSidebar .innovation-type.de-selected p {
+	color: #c2c2c2;
+}
+
+.tooltip {
+	padding: 8px 12px 20px !important;
+	background-color: rgba(64,64,64,0.95) !important;
+	min-height: 200px;
+	max-height: 600px;
+	// overflow-y: scroll;
+	height: unset !important;
+}
+.tooltip .title,
+.tooltip p {
+	color: #fff !important;
+	text-align: left;
+	margin: 12px;
+}
+
+.tooltip .location .location-icon {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	margin-right: 6px;
+	position: relative;
+	top: 2px;
+}

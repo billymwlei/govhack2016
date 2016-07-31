@@ -21,10 +21,12 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="stylesheet" type="text/css" href="normalize.css">
-<body class="h-100">
+
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<body id="addPage" class="h-100">
   <header class="flex justify-between py4 ml4 fade-in-up">
     <a class="flex" href="/">
-      <img class="ml2" src="images/logo.svg">
+      <img class="ml2" src="images/innovationx-logo.svg">
     </div>
     <div class="flex mr4">
       <a class="flex items-center mr4" href="https://twitter.com/home?status=Based%20in%20QLD?%20Working%20on%20an%20awesome%20project?%20Showcase%20it!%20%23PutItonTheMap%20%23govhack%20%40govhackBNE%20%0A">
@@ -35,7 +37,8 @@
   <main class="max-w-620px mx-auto my5 fade-in-up flex flex-column">
     <h1 class="font-double my0">Add your project to InnovationX</h1>
     <p class="font-large my0 grey">InnovationX allows the public to discover the different types of innovation that is happening around them — connecting innovations with people.</p>
-    <form action="" class="flex flex-column mt4" method="POST">
+
+    <form action="" class="flex flex-column mt4" method="POST" id="new">
       <div class="flex flex-column w-100 mb3">
         <input class="border border-grey-light rounded py2 px2 order2" id="project-name" name="Project Name" required="true" type="text" placeholder="Project name... Company name..."></input>
         <label class="uppercase grey semi font-smaller mb1 required" for="project-name">Project Name</label>
@@ -60,7 +63,7 @@
           <label><input type="checkbox" name="category" value="Health" />Health</label>
           <label><input type="checkbox" name="category" value="Entrepreneurialism" />Entrepreneurialism</label>
           <label><input type="checkbox" name="category" value="Agriculture" />Agriculture</label>
-          <label><input type="checkbox" name="category" value="Engergy" />Engergy</label>
+          <label><input type="checkbox" name="category" value="Engergy" />Energy</label>
           <label><input type="checkbox" name="category" value="Professional, scientific and technical services" />Professional, scientific and technical services</label>
           <label><input type="checkbox" name="category" value="Environment" />Environment</label>
           <label><input type="checkbox" name="category" value="Information media and telecommunications" />Information media and telecommunications</label>
@@ -78,11 +81,40 @@
         <textarea class="border border-grey-light rounded py2 px2 min-h-150px order2" id="project-description" name="Project Description" required="true" type="text" placeholder="What problem are you solving?"></textarea>
         <label class="uppercase grey semi required font-smaller mb1" for="project-description">Project Description</label>
       </div>
-      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send">Submit Project</button>
+
+      <button id="submitBtn" class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send" >Submit Project</button>
+
     </form>
 
 
   </main>
 </body>
+<script src="https://cdn.jsdelivr.net/parse/1.6.7/parse.min.js"></script>
 <script src="https://use.typekit.net/mba3tyv.js"></script>
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    Parse.initialize('myAppId','innovativex');
+    Parse.serverURL = 'http://innovativex.azurewebsites.net/parse';
+
+     $('form').on('submit', function(e) {
+        console.log($(this).serializeArray());
+        event.preventDefault();
+
+        var obj = new Parse.Object('GameScore');
+        obj.set('score',1337);
+        obj.save().then(function(obj) {
+          console.log(obj.toJSON());
+          var query = new Parse.Query('GameScore');
+          query.get(obj.id).then(function(objAgain) {
+            console.log(objAgain.toJSON());
+          }, function(err) {console.log(err); });
+        }, function(err) { console.log(err); });
+
+    });
+});
+
+</script>

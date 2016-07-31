@@ -21,867 +21,285 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="stylesheet" type="text/css" href="normalize.css">
-<body class="h-100">
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<body id="homePage" class="h-100">
   <header class="flex justify-between py4 ml4">
-    <a href="https://billymwlei.github.io/govhack2016" class="flex">
-      <img class="mr2" src="images/logo.svg">
-    </a>
+    <div class="flex">
+      <img id="brand-logo" class="mr2" src="images/innovationx-logo.svg">
+    </div>
     <div class="flex mr4">
       <a class="flex items-center mr4" href="https://twitter.com/home?status=Based%20in%20QLD?%20Working%20on%20an%20awesome%20project?%20Showcase%20it!%20%23PutItonTheMap%20%23govhack%20%40govhackBNE%20%0A">
-        <span class="underline mr1">Share it on Twitter!</span> Showcase your project to the world! #onTheMap
+        Share it on Twitter! Showcase your project to the world! #onTheMap
       </a>
-      <a class="flex items-center action rounded bg-grey-dark white py2 px4" href="add.html">
+      <a id="addBtn" class="flex items-center action rounded white bg-grey-dark py2 px4" href="/add.html">
         Add your innovation
       </a>
     </div>
   </header>
-  <section class="flex flex-column absolute r0 b0 mr4 mb4 right-align">
-    <h2 class="uppercase font-small grey mt0 medium">Top 10 Innovative Space</h2>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #1f77b4;" onclick="onClickFilter(0)">
-      <h4 class="font-small mr1 my0 regular">Agriculture</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">60</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #ff7f0e;" onclick="onClickFilter(1)">
-      <h4 class="font-small mr1 my0 regular">Education</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">12</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #2ca02c;" onclick="onClickFilter(2)">
-      <h4 class="font-small mr1 my0 regular">Energy</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">60</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #8c564b;" onclick="onClickFilter(3)">
-      <h4 class="font-small mr1 my0 regular">Entrepreneurialism</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">12</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #9467bd;" onclick="onClickFilter(4)">
-      <h4 class="font-small mr1 my0 regular">Environment</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">60</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #7f7f7f;" onclick="onClickFilter(5)">
-      <h4 class="font-small mr1 my0 regular">Health</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">12</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #e377c2;" onclick="onClickFilter(6)">
-      <h4 class="font-small mr1 my0 regular">Information Media</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">60</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #d62728;" onclick="onClickFilter(7)">
-      <h4 class="font-small mr1 my0 regular">Manufacturing</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">12</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb2"  style="color: #bcbd22;" onclick="onClickFilter(8)">
-      <h4 class="font-small mr1 my0 regular">Mining and Resources</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">60</p>
-    </a>
-    <a class="flex hover-opacity justify-end items-baseline right-align border rounded p1 mb0"  style="color: #17becf;" onclick="onClickFilter(9)">
-      <h4 class="font-small mr1 my0 regular">Professional Services</h4>
-      <p class="font-larger my0 industry line-height-smaller regular">12</p>
-    </a>
-  </section>
+  <nav id="navSidebar" class="flex flex-column absolute r0 b0 mr4 mb4 right-align">
+  <h2 class="uppercase font-large grey mt0 medium">Innovation Sectors</h2>
+    <div class="sidebarContainer">
+      <a class="innovation-type right-align border rounded"  style="color: #ff7f0e;">
+        <h4 class="font-small mr1 my0 regular">Agriculture</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #2ca02c;">
+        <h4 class="font-small mr1 my0 regular">Education</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #d62728;">
+        <h4 class="font-small mr1 my0 regular">Energy</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #9467bd;">
+        <h4 class="font-small mr1 my0 regular">Entrepreneurialism</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #8c564b;">
+        <h4 class="font-small mr1 my0 regular">Environment</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #e377c2;">
+        <h4 class="font-small mr1 my0 regular">Health</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #7f7f7f;">
+        <h4 class="font-small mr1 my0 regular">Information Media</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #bcbd22;">
+        <h4 class="font-small mr1 my0 regular">Manufacturing</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #17becf;">
+        <h4 class="font-small mr1 my0 regular">Mining and Resources</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+      <a class="innovation-type right-align border rounded"  style="color: #1f77b4;">
+        <h4 class="font-small mr1 my0 regular">Professional Services</h4>
+        <p class="font-larger my0 industry line-height-smaller regular">0</p>
+      </a>
+    </div>
+  </nav>
   <div class="absolute b0 l0 ml4 mb4">
-    <a class="m0 mr4 grey-darker" href=""#>Cluster View</a>
-    <a class="m0" href=""#>Map View</a>
+    <!-- <a class="m0 mr4 grey-darker" href=""#>Cluster View</a> -->
+    <!-- <a class="m0" href=""#>Map View</a> -->
   </div>
 </body>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 <script src="https://use.typekit.net/mba3tyv.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+
+</script>
 <script>
-var isCategoryOn = [];
-var data = [
-{
-"Company": "Bioproton Pty Ltd",
-"Summary": "Develop a new process to remove dags from feedlot cattle.",
-"Location": "Logan",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Garrad, Miss Rebecca",
-"Summary": "Pastures as tools for pest suppression",
-"Location": "Toowoomba\nBrisbane",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Robertson, Mr Alastair",
-"Summary": "Up-scaling the production of novel agricultural enzymes to industrial scale",
-"Location": "Brisbane",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Darestani, Dr Mariam",
-"Summary": "Water purification  pipes for irrigation using poor quality water resources",
-"Location": "Brisbane",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Luckman, Dr Paul",
-"Summary": "Comercial scale production of N-Sorptive Superabsorbent Biopolymers for Sugarcane Fertilizers",
-"Location": "Brisbane",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Netzel, Dr Gabriele",
-"Summary": "Managing the detrimental effects of indospicine through rumen metabolism",
-"Location": "Brisbane/Coopers Plains",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Yu, Dr Meihua",
-"Summary": "Nano-pollen encapsulated lysozyme: a safe alternative to antibiotics for livestock",
-"Location": "St Lucia\nClifton",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Annamalai, \nDr Pratheep Kumar",
-"Summary": "Easily deconstructed spinifex nanofibres for enhancement of high-performance construction materials",
-"Location": "Indooroopilly",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Hayward, Dr Alice",
-"Summary": "MICROpropagator - A Plant Propagation Platform Based on Novel Biomolecules",
-"Location": "Brisbane",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Karim, Dr Azharul",
-"Summary": "Intelligent microwave assisted convective dryer for agricultural products",
-"Location": "Brisbane\nToowoomba",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Li, Dr Li",
-"Summary": "Engineering nanohybrid platforms  for oral vaccination combined with animal feed",
-"Location": "St Lucia",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Xu, Dr Chengyuan (Stephen)",
-"Summary": "Early Detection of Crop Stresses in Tropical Protected Cropping Systems",
-"Location": "Bundaberg",
-"Sector": "Agriculture",
-"TypeID": 1
-},
-{
-"Company": "Meston, Mr Troy",
-"Summary": "An indigenous journey through the 21st century educational landscapes of new metrics",
-"Location": "Brisbane",
-"Sector": "Education",
-"TypeID": 3
-},
-{
-"Company": "The Corporations Professional Ecosystems Pty Ltd",
-"Summary": "Create an online professional ecosystem by developing an innovative website for educators.",
-"Location": "Tingalpa",
-"Sector": "Education",
-"TypeID": 3
-},
-{
-"Company": "Airtime Holdings Pty Ltd",
-"Summary": "Undertake research and develop online calculators to reduce carbon emissions in high-rise buildings.",
-"Location": "Fortitude Valley",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "Galindo Torres,\nDr Sergio Andres",
-"Summary": "Pushing the boundaries of current numerical geotechnical modelling capabilities",
-"Location": "Brisbane",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "Konarova, Dr Muxina",
-"Summary": "Sustainable production of ethanol fuel from waste-gas",
-"Location": "Brisbane",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "Hu, Dr Shihu",
-"Summary": "Energy Positive Domestic Wastewater Treatment",
-"Location": "Brisbane",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "McCabe, \nAssociatiate Professor Bernadette",
-"Summary": "Process improvement of energy and value extraction from agro-industrial waste",
-"Location": "Toowoomba",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "Tritium",
-"Summary": "Funding will assist this world-leading Queensland business to bring its innovative tech products onto the market sooner. Their fast charging technology is providing drivers of electric vehicles greater convenience to charge their cars anywhere. With funding, they will expand their research and development, manufacturing and sales workforce, as well as finalise expansion at their new manufacturing facilities in Brisbane.",
-"Location": "Brisbane",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "Water, Dr Wayne",
-"Summary": "Making Solar Better: Advanced Electronics for Distributed Energy Storage",
-"Location": "Brisbane/Enogerra",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "Mishra, Dr Yateendra",
-"Summary": "Maximising renewable energy penetration through smart inverter deployment and control",
-"Location": "Brisbane",
-"Sector": "Engergy",
-"TypeID": 4
-},
-{
-"Company": "Canvas Coworking Inc",
-"Summary": "Founderfest 2016 ‰ÛÒ a Startup Weekend for Youth in Toowoomba where teams will group into areas of interests and strengths in the areas of sales, business, technology and design.",
-"Location": "Toowoomba",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Fifty Six Creations Pty Ltd",
-"Summary": "Startup workshops to interact and work with approximately 200 Aboriginal and Torres Strait Islander children in Cairns to introduce them to Science, Technology, Engineering and Mathematics (STEM) and computer technology. The students will learn to put together their very own tablet computer, teaching them about the wonders of STEM, computer science and entrepreneurship.",
-"Location": "Cairns",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Generation Innovation Ltd",
-"Summary": "A Startup Bootcamp - GI Challenge 2016 supports young entrepreneurs to both create and cultivate a business venture in the real economy. The program comprises two one-day workshops two weeks apart, followed by a development phase where teams and mentors develop their ideas to a ‰Û÷pitchable‰Ûª product",
-"Location": "Sunshine Coast",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Marist Youth Care Limited",
-"Summary": "We can be heroes program consists of seven startup workshops to identify and build entrepreneurial and startup skills in young Queenslanders. This project targets disengaged youth and their collaborators including the Brisbane Youth Service, Edgeware Creative and Little Tokyo Two.",
-"Location": "Brisbane",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Mountain Creek State High School",
-"Summary": "Startup-ED, a two-phase project incorporating Lean Startup principles and Lean Launchpad methodology, with a two day Innovation Bootcamp, followed by ongoing coaching support for teachers over the following eight weeks",
-"Location": "Mountain Creek, Sunshine Coast",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Palm Beach-Currumbin High School",
-"Summary": "‰Û÷Entrepreneurial Education Program‰Ûª consisting of an eight week program comprising two 70 minute sessions per week for approximately 110 students in a startup workshop format. The program is aimed at Year 10 students in partnership with Startup Apprentice and Startup Creative",
-"Location": "Palm Beach, Currumbin",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Queensland University of Technology",
-"Summary": "Startup Hatch ‰ÛÒ Bringing Ideas to Reality, a 30-day project Startup Bootcamp focused on student workshops, pitching ideas and resulting in a future startup forum",
-"Location": "Brisbane",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "QUT Creative Enterprise Australia",
-"Summary": "Startup Weekend Brisbane ‰ÛÒ Creative Tech designed to collide new ways of combing creative and technical skills to create cross-disciplinary business ideas in a fun and interactive way",
-"Location": "Brisbane",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Startup STEAM Inc",
-"Summary": "Startup Weekend for Youth (Sunshine Coast) 2016 provides an avenue for students to further develop and increase awareness around the commercialisation options for the skillsets they will develop in schools and at home around the new Digital Technologies course being implemented in Queensland from 2016. Participants will also be introduced to startup methodology.",
-"Location": "Sunshine Coast",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Tech Girls Movement Pty Ltd",
-"Summary": "‰Û÷2016 Showcase for the Search for the Next Tech Girl Superhero‰Ûª one day event at QUT Brisbane. The showcase is the culmination of one of the core activities of the Tech Girls Movement, which is a youth entrepreneurship program in which they promote entrepreneurship as an alternative employment pathway to a career in STEM",
-"Location": "QUT, Brisbane",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Time Masters (Australa) Pty Limite",
-"Summary": "Open Your Eyes To Cash‰Ûª, Gold Coast startup workshop aimed at youth. This youth event connects startups and small business to funding and resources that will accelerate their growth and improve their chances of success.",
-"Location": "Gold Coast",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "University of the Sunshine Coast",
-"Summary": "The Empowering Young Entrepreneurs program consists of a series of experiential entrepreneurship activities, including Startup Weekend Sunshine Coast, a series of informal meetups, 2 full-day capacity building workshops and an online bootcamp",
-"Location": "Sunshine Coast",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Fifty Six Creations Pty Ltd",
-"Summary": "One day startup workshop in Mackay with support from the Foundation for Young Australians, Little Tokyo Two & the State Library of Queensland, the Fiftysix Academy will supply the young, Aboriginal and Torres Strait Islander students with Fiftysix Tablet Kits.",
-"Location": "Mackay",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Time Masters (Australa) Pty Limited",
-"Summary": "Open Your Eyes To Cash‰Ûª, Logan startup workshop aimed at youth. This youth event connects startups and small business to funding and resources that will accelerate their growth and improve their chances of success.",
-"Location": "Logan",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Marist Youth Care Limited",
-"Summary": "The 2016 IMPACT National Conference and Startup Weekend brings together 155 young Australians, to learn through social entrepreneurs, network with NGOs and corporates and get hands on startup experience through building and pitching their own social enterprise idea.",
-"Location": "South Bank",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Kixstaart Indigenous Business Pty Ltd",
-"Summary": "Australia's first indigenous Startup Weekend will promote and build indigenous entrepreneurship capabilities within Queensland by helping young 18 ‰ÛÒ 24 year old Aboriginal and Torres Strait Islander people acquire the skills, discover opportunities and provide the inspiration and support they need to identify business opportunities and validate their ideas.",
-"Location": "Brisbane",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Griffith University",
-"Summary": "Mentor Revolution ‰ÛÒ Get Started Startup Webinars to create online webinars and a networking forum to inspire young startups through sharing stories of other young entrepreneurs who have achieved success. This partnership between two leading university business schools ‰ÛÒ Griffith University and the University of Queensland and startup technology company Me Media.",
-"Location": "Southport and St Lucia",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "TimeLooper",
-"Summary": "Expansion into Queensland. TimeLooper is a tourism virtual reality startup.",
-"Location": "TBC",
-"Sector": "Entrepreneurialism",
-"TypeID": 5
-},
-{
-"Company": "Hunter, Dr Cass",
-"Summary": "Transforming hidden data: An integrative information system for Torres Strait",
-"Location": "Cairns",
-"Sector": "Environment",
-"TypeID": 6
-},
-{
-"Company": "Aird, Miss Samantha",
-"Summary": "Impacts of Long-Term Marine Resource Use on the GBR",
-"Location": "Cairns",
-"Sector": "Environment",
-"TypeID": 6
-},
-{
-"Company": "Glasl, Miss Bettina",
-"Summary": "Microbial indicators for water quality and environmental stress assessment",
-"Location": "Townsville\nBrisbane",
-"Sector": "Environment",
-"TypeID": 6
-},
-{
-"Company": "Adame, Dr (Maria) Fernanda",
-"Summary": "Cost-effective restoration of wetlands that protect the Great Barrier Reef",
-"Location": "Brisbane\nTownsville\nRockhampton",
-"Sector": "Environment",
-"TypeID": 6
-},
-{
-"Company": "Bainbridge, Dr Zoe",
-"Summary": "Identifying sources of fine sediments to protect the GBR",
-"Location": "Townsville",
-"Sector": "Environment",
-"TypeID": 6
-},
-{
-"Company": "Blondeau-Patissier, \nDr David",
-"Summary": "Satellite Detection of Marine Pollution in the Great Barrier Reef",
-"Location": "Brisbane",
-"Sector": "Environment",
-"TypeID": 6
-},
-{
-"Company": "Ortiz, Dr Juan",
-"Summary": "Maximising GBR resilience by integrating physiology, evolutionary biology, and macroecology",
-"Location": "Brisbane\nTownsville",
-"Sector": "Environment",
-"TypeID": 6
-},
-{
-"Company": "Ellume Pty Ltd",
-"Summary": "Develop an innovative ultra-sensitive test to help diagnose respiratory syncytial virus ‰ÛÒ one of the most common causes of childhood lung infections.",
-"Location": "East Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Mackay GP Superclinic",
-"Summary": "Develop an online program to allow clinical patients to enter their details on their smartphone or device beforehand, saving staff and patient time.",
-"Location": "Rural View",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "GSL: A Good Start to Life",
-"Summary": "Develop online customer engagement and tools for young people affected by disability or mental health disorders.",
-"Location": "Parramatta Park",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Hear and Say - Centre for Deaf Children Ltd",
-"Summary": "Create a next-generation prosthetic ear for children with microtia using advanced 3D computer modelling and printing technology.",
-"Location": "Ashgrove",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Hear Check",
-"Summary": "Develop an innovative audiology service accessible to rural and remote patients using telemedicine/telehealth techniques.",
-"Location": "Mountain Creek",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "YFS Ltd",
-"Summary": "Develop and evaluate a youth engagement model and upskill young people in digital mediums to become agents of change and help prevent domestic violence.",
-"Location": "Slacks Creek",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Arnold, Miss Megan",
-"Summary": "New prophylactic drugs for malaria",
-"Location": "Brisbane, Australia\nMelbourne, Australia\nSan Diego, USA\nTres Cantos, Spain\nBangkok, Thailand",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Campagnolo, Miss Nadia",
-"Summary": "The Association between Diet and Inflammation in Chronic Fatigue Syndrome",
-"Location": "Gold Coast\nToowoomba\nBrisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Cruz, Mrs Rena Louise",
-"Summary": "Advanced 3D biofabrication approaches for the treatment of microtia",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Lynch, Dr Johanna",
-"Summary": "'Sense of safety': a new way to see mental health?",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Sanjida, Mrs Saira",
-"Summary": "Role of antidepressants in cancer risk and treatment outcomes",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Stockwell, Mrs Rebecca",
-"Summary": "Hospital environments and the spread of cough aerosols",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Wu, Mr Eric",
-"Summary": "Development of a 'Smart' heart assist device",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Amiralian, Dr Nasim",
-"Summary": "Advancement and Commercialisation of Spinifex Nanocellulose Enhanced Rubber Products",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Edwards, Dr Jason",
-"Summary": "Novel approach to reduce productivity losses from injuries and illnesses",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Fatehi, Dr Farhad",
-"Summary": "Using telemedicine for improving diabetes management in Queensland",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Goode, Dr Natassia",
-"Summary": "A proactive approach for reducing medication errors in Queensland hospitals",
-"Location": "Nambour",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Jaiprakash, Dr Anjali",
-"Summary": "Robotic leg-holding device making keyhole knee-surgery easier and safer",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Mosley, Dr Philip",
-"Summary": "Psychiatric symptoms after deep brain stimulation for Parkinson's disease",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Panchal, Dr Sunil",
-"Summary": "Functional foods for healthy ageing of a growing elderly population",
-"Location": "Toowoomba",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Wiliem, Dr Arnold",
-"Summary": "Transforming Queensland Health Care via Digital Pathology",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Bolderson, Dr Emma",
-"Summary": "Targeting genome stability in cancer",
-"Location": "Woolloongabba",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Giacomin, Dr Paul",
-"Summary": "New therapies for Coeliac Disease: Helminths and their secreted products",
-"Location": "Cairns",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Kesby, Dr James",
-"Summary": "Establishing therapeutic links between early dopamine function and schizophrenia",
-"Location": "St Lucia",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Lim, Dr Yah Leng",
-"Summary": "Compact terahertz laser imaging system for early skin cancer detection",
-"Location": "St Lucia",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Miles, \nAssociate Professor John",
-"Summary": "Development of novel immunotherapeutics for cancer treatment",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Prow, Dr Natalie",
-"Summary": "Development of a vaccine for chikungunya virus",
-"Location": "Herston",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Dr Kameron Dunn",
-"Summary": "Transforming Queensland‰Ûªs agricultural and petroleum waste products into advanced composites.",
-"Location": "Brisbane",
-"Sector": "Health",
-"TypeID": 7
-},
-{
-"Company": "Tanda",
-"Summary": "Assess and communicate the benefits of the company‰Ûªs online employee management system in order to access new markets and seek future growth partnerships.",
-"Location": "Fortitude Valley",
-"Sector": "Information media and telecommunications",
-"TypeID": 8
-},
-{
-"Company": "ImmersaView Pty Ltd",
-"Summary": "Improve existing immersive display software products to enable the company to compete for larger, more complex contracts.",
-"Location": "Banyo",
-"Sector": "Information media and telecommunications",
-"TypeID": 8
-},
-{
-"Company": "WorkingMouse Pty Ltd",
-"Summary": "Move the company‰Ûªs model-driven engineering approach to software development to a cloud-based platform, enabling customers to create and maintain their own software-as-a-service applications .",
-"Location": "St Lucia",
-"Sector": "Information media and telecommunications",
-"TypeID": 8
-},
-{
-"Company": "Sivapalan, Dr Sabesan",
-"Summary": "Deep Learning for Large Scale Logo Identification and Semantic Search",
-"Location": "Brisbane",
-"Sector": "Information media and telecommunications",
-"TypeID": 8
-},
-{
-"Company": "Wang, Dr Yifan",
-"Summary": "Reconfigurable mm-wave antenna systems for satellite communications",
-"Location": "Brisbane",
-"Sector": "Information media and telecommunications",
-"TypeID": 8
-},
-{
-"Company": "JESI Management Solutions",
-"Summary": "Funding will increase the companies product development in innovative end-to-end journey management software.  The company's innovative end-to-end journet management software enables employers to safegaurd their employees whenever travelling, regardless of where they are in the world.",
-"Location": "Townsville",
-"Sector": "Information media and telecommunications",
-"TypeID": 8
-},
-{
-"Company": "Statcom Solutions Pty Ltd",
-"Summary": "Using new battery technology to create an energy storage system to provide power quality support on utility low voltage networks.",
-"Location": "Herston",
-"Sector": "Manufacturing",
-"TypeID": 9
-},
-{
-"Company": "Townsville Engineering Industries Pty Ltd",
-"Summary": "Develop low cost wireless sensors to monitor equipment and reduce downtime, primarily in the mining and sugar industries.",
-"Location": "Bohle",
-"Sector": "Manufacturing",
-"TypeID": 9
-},
-{
-"Company": "Peng, Dr Hong",
-"Summary": "Unlocking Queensland's bauxite ore reserves through process technology innovation",
-"Location": "Brisbane",
-"Sector": "Mining and resources",
-"TypeID": 10
-},
-{
-"Company": "Shukla, Dr Pradeep",
-"Summary": "Upscaling and developing on-site cyanide plant for gold/base metal mines",
-"Location": "Brisbane",
-"Sector": "Mining and resources",
-"TypeID": 10
-},
-{
-"Company": "Evolving Machine Intelligence Pty Ltd",
-"Summary": "Use a new machine-intelligent technology to build and demonstrate a modelling tool for aviation engines, to reduce engine maintenance costs and risks significantly.",
-"Location": "St Lucia",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-},
-{
-"Company": "RedEye Apps Pty Ltd",
-"Summary": "Design and develop the second version of the company‰Ûªs engineering drawing and data management app, allowing clients to manage data and complete work orders on the go in a central cloud-based location via a Big Data solution.",
-"Location": "Brisbane City",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-},
-{
-"Company": "Taylor Willis Pty Ltd",
-"Summary": "Identify a range of efficient, cost-effective residential development housing products for 405 square metre lots, contributing to the creation of liveable communities.",
-"Location": "Southport BC",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-},
-{
-"Company": "Nitestar Security Group",
-"Summary": "Expand the company‰Ûªs use of drone technology and research into new commercial services.",
-"Location": "Bundall",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-},
-{
-"Company": "Truii Pty Ltd",
-"Summary": "Develop user-friendly charting and mapping functionality for the truii.com online data platform.",
-"Location": "Highgate Hill",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-},
-{
-"Company": "McCarthy, Mr Nicholas",
-"Summary": "Breathing fire: understanding the meteorology of pyro-convection in bushfires.",
-"Location": "Brisbane, Australia\nMelbourne, Australia",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-},
-{
-"Company": "Smith, Dr Daniel",
-"Summary": "A smartphone-based decision support tool to stimulate cyclone mitigation",
-"Location": "Townsville",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-},
-{
-"Company": "Shaw, Dr Paul",
-"Summary": "Development of a luminescence-based sensor for the detection of explosives",
-"Location": "Brisbane",
-"Sector": "Professional, scientific and technical services",
-"TypeID": 0
-}
-];
-var sortedData =
-_
-.chain(data)
-.groupBy('Sector')
-.map(function(value, key) {
-isCategoryOn.push(true);
-return {
-type: key,
-companies: value
-}
-})
-.value();
-var onClickFilter = function (idx){
-if(isCategoryOn[idx]) {
-// Take out the circle
-//svg.selectAll("circle").remove;
-svg.selectAll("circle").filter(function(d){ return d.cluster === idx }).style("visibility","hidden");
-} else {
-// Put the circle back
-svg.selectAll("circle").filter(function(d){ return d.cluster === idx }).style("visibility","visible");
-}
-isCategoryOn[idx] = !isCategoryOn[idx];
-};
-var width = 960,
-height = 500,
-padding = 3, // separation between same-color circles
-clusterPadding = 30
-, // separation between different-color circles
-maxRadius = 20;
-var n = data.length, // total number of circles
-m = sortedData.length; // number of distinct clusters
-var color = ['#1f77b4',
-'#ff7f0e',
-'#2ca02c',
-'#d62728',
-'#9467bd',
-'#8c564b',
-'#e377c2',
-'#7f7f7f',
-'#bcbd22',
-'#17becf']
-// The largest node for each cluster.
-var clusters = new Array(m);
-var i = 0;
-var nodes = d3.range(data.length).map(function(idx) {
-var i = data[idx].TypeID;
-var r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
-d = {cluster: data[idx].TypeID, radius: 10,data:data[idx]};
-if (!clusters[i] || (r > clusters[i].radius)) {
-clusters[i] = d;
-}
-return d;
+
+  var isCategoryOn = [];
+  var data = [];
+  $.getJSON("data/final.json", function(json) {
+      data = json;
+        var sortedData =
+  _
+  .chain(data)
+  .groupBy('Sector')
+  .map(function(value, key) {
+    isCategoryOn.push(true);
+        //console.log(key);
+        return {
+          type: key,
+          companies: value
+        }
+      })
+  .value();
+
+$(document).ready(function() {
+  $('nav a').each(function(index) {
+
+    $(this).addClass('is-selected');
+
+    $(this).click(function(){
+      if(isCategoryOn[index]) {
+        $(this).removeClass('is-selected');
+        $(this).addClass('de-selected');
+      } else {
+        $(this).removeClass('de-selected');
+        $(this).addClass('is-selected');
+      }
+      onClickFilter(index);
+    })
+  });
+
+  $('nav a p').each(function(index) {
+    $(this).html(sortedData[index].companies.length);
+  });
 });
-var force = d3.layout.force()
-.nodes(nodes)
-.size([width, height])
-.gravity(.02)
-.charge(0)
-.on("tick", tick)
-.start();
-var svg = d3.select("body").append("svg")
-.attr("width", width)
-.attr("height", height);
-var div = d3.select("body").append("div")
-.attr("class", "tooltip")
-.style("opacity", 0);
-var circle = svg.selectAll("circle")
-.data(nodes)
-.enter().append("circle")
-.attr("r", function(d) { return d.radius; })
-.attr("cluster",function(d){return d.cluster})
-.style("fill", function(d) { return color[d.cluster]; })
-.on("click",elementOnClick)
-.on("mouseover", function(d) {
-div.transition()
-.duration(200)
-.style("opacity", 0.9);
-div .html(d.data.Company + "<br/>" + d.data.Summary )
-.style("left", (d3.event.pageX) + "px")
-.style("top", (d3.event.pageY - 28) + "px");
-})
-.on("mouseout", function(d) {
-div.transition()
-.duration(500)
-.style("opacity", 0);
-})
-.call(force.drag);
-function elementOnClick(element) {
-console.log(element);
-}
-function tick(e) {
-circle
-.each(cluster(10 * e.alpha * e.alpha))
-.each(collide(.5))
-.attr("cx", function(d) { return d.x; })
-.attr("cy", function(d) { return d.y; });
-}
+
+  var onClickFilter = function(idx) {
+
+    if (isCategoryOn[idx]) {
+        // Take out the circle
+        //svg.selectAll("circle").remove;
+
+        svg.selectAll("circle").filter(function(d) {
+          return d.cluster === idx
+        }).style("visibility", "hidden");
+        //svg.selectAll("circle").filter(function(d){ return d.cluster !== idx }).style("visibility","hidden");
+
+      } else {
+        // Put the circle back
+        svg.selectAll("circle").filter(function(d) {
+          return d.cluster === idx
+        }).style("visibility", "visible");
+        //svg.selectAll("circle").filter(function(d){ return d.cluster !== idx }).style("visibility","visible");
+
+      }
+
+      isCategoryOn[idx] = !isCategoryOn[idx];
+    };
+
+
+    var width = 900,
+    height = 800,
+    padding = 3, // separation between same-color circles
+    clusterPadding = 30, // separation between different-color circles
+    maxRadius = 20;
+
+var n = data.length, // total number of circles
+    m = 10; // number of distinct clusters
+
+    var color = ['#1f77b4',
+    '#ff7f0e',
+    '#2ca02c',
+    '#d62728',
+    '#9467bd',
+    '#8c564b',
+    '#e377c2',
+    '#7f7f7f',
+    '#bcbd22',
+    '#17becf']
+    var clusters = new Array(m);
+    var i = 0;
+    var nodes = d3.range(data.length).map(function(idx) {
+      var i = data[idx].TypeID;
+      var r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
+      d = {
+        cluster: data[idx].TypeID,
+        radius: 10,
+        data: data[idx]
+      };
+      if (!clusters[i] || (r > clusters[i].radius)) {
+        clusters[i] = d;
+      }
+      return d;
+    });
+    var force = d3.layout.force()
+    .nodes(nodes)
+    .size([width, height])
+    .gravity(.02)
+    .charge(0)
+    .on("tick", tick)
+    .start();
+    var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+    var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+    var circle = svg.selectAll("circle")
+    .data(nodes)
+    .enter().append("circle")
+    .attr("r", function(d) {
+      return d.radius;
+    })
+    .attr("cluster", function(d) {
+      return d.cluster
+    })
+    .style("fill", function(d) {
+      return color[d.cluster];
+    })
+    .on("click", elementOnClick)
+    .on("mouseover", function(d) {
+      d3.select(this).style("stroke", " rgba(164, 255, 255, 0.6)").style("stroke-width","8").style("stroke-opacity","0.6");
+      var http = "<h3 class='title'>" + d.data.Company + "</h3>" + "<p class='location'><img class='location-icon' src='images/location-icon.png' />" +d.data.Location +"</p>" + "<p class='summary'>" +d.data.Summary +"</p>";
+      div.transition()
+      .duration(200)
+      .style("opacity", 0.9);
+      div.html(http)
+      .style("left", (d3.event.pageX) + "px")
+      .style("top", (d3.event.pageY - 28) + "px");
+    })
+    .on("mouseout", function(d) {
+      d3.select(this).style("stroke", "none")
+      div.transition()
+      .duration(500)
+      .style("opacity", 0);
+    })
+    .call(force.drag);
+
+    function elementOnClick(element) {
+      console.log(element);
+    }
+
+    function tick(e) {
+      circle
+      .each(cluster(10 * e.alpha * e.alpha))
+      .each(collide(.5))
+      .attr("cx", function(d) {
+        return d.x;
+      })
+      .attr("cy", function(d) {
+        return d.y;
+      });
+    }
 // Move d to be adjacent to the cluster node.
 function cluster(alpha) {
-return function(d) {
-var cluster = clusters[d.cluster];
-if (cluster === d) return;
-var x = d.x - cluster.x,
-y = d.y - cluster.y,
-l = Math.sqrt(x * x + y * y),
-r = d.radius + cluster.radius;
-if (l != r) {
-l = (l - r) / l * alpha;
-d.x -= x *= l;
-d.y -= y *= l;
-cluster.x += x;
-cluster.y += y;
-}
-};
+  return function(d) {
+    var cluster = clusters[d.cluster];
+    if (cluster === d) return;
+    var x = d.x - cluster.x,
+    y = d.y - cluster.y,
+    l = Math.sqrt(x * x + y * y),
+    r = d.radius + cluster.radius;
+    if (l != r) {
+      l = (l - r) / l * alpha;
+      d.x -= x *= l;
+      d.y -= y *= l;
+      cluster.x += x;
+      cluster.y += y;
+    }
+  };
 }
 // Resolves collisions between d and all other circles.
 function collide(alpha) {
-var quadtree = d3.geom.quadtree(nodes);
-return function(d) {
-var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
-nx1 = d.x - r,
-nx2 = d.x + r,
-ny1 = d.y - r,
-ny2 = d.y + r;
-quadtree.visit(function(quad, x1, y1, x2, y2) {
-if (quad.point && (quad.point !== d)) {
-var x = d.x - quad.point.x,
-y = d.y - quad.point.y,
-l = Math.sqrt(x * x + y * y),
-r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
-if (l < r) {
-l = (l - r) / l * alpha;
-d.x -= x *= l;
-d.y -= y *= l;
-quad.point.x += x;
-quad.point.y += y;
+  var quadtree = d3.geom.quadtree(nodes);
+  return function(d) {
+    var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
+    nx1 = d.x - r,
+    nx2 = d.x + r,
+    ny1 = d.y - r,
+    ny2 = d.y + r;
+    quadtree.visit(function(quad, x1, y1, x2, y2) {
+      if (quad.point && (quad.point !== d)) {
+        var x = d.x - quad.point.x,
+        y = d.y - quad.point.y,
+        l = Math.sqrt(x * x + y * y),
+        r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
+        if (l < r) {
+          l = (l - r) / l * alpha;
+          d.x -= x *= l;
+          d.y -= y *= l;
+          quad.point.x += x;
+          quad.point.y += y;
+        }
+      }
+      return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+    });
+  };
 }
-}
-return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
-});
-};
-}
+  });
+
+
 </script>
