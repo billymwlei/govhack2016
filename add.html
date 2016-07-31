@@ -79,7 +79,7 @@
         <textarea class="border border-grey-light rounded py2 px2 min-h-150px order2" id="project-description" name="Project Description" required="true" type="text" placeholder="What problem are you solving?"></textarea>
         <label class="uppercase grey semi required font-smaller mb1" for="project-description">Project Description</label>
       </div>
-      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send"  onclick="submit()" >Submit Project</button>
+      <button class="bg-white grey border border-grey-light hover-grey-darker hover-border-grey-darker transition-all rounded px3 py2" type="submit" value="Send" >Submit Project</button>
 
     </form>
 
@@ -93,9 +93,24 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
+
+    Parse.initialize('myAppId','innovativex');
+    Parse.serverURL = 'http://innovativex.azurewebsites.net/parse';
+
      $('form').on('submit', function(e) {
         console.log($(this).serializeArray());
         event.preventDefault();
+
+        var obj = new Parse.Object('GameScore');
+        obj.set('score',1337);
+        obj.save().then(function(obj) {
+          console.log(obj.toJSON());
+          var query = new Parse.Query('GameScore');
+          query.get(obj.id).then(function(objAgain) {
+            console.log(objAgain.toJSON());
+          }, function(err) {console.log(err); });
+        }, function(err) { console.log(err); });
+
     });
 });
 
